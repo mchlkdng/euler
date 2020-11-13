@@ -1,9 +1,9 @@
-package com.company;
+package com.mkd;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.company.Utils.isPrime;
+import static com.mkd.Utils.isPrime;
 
 public class CircularPrimes {
     public static void main(String[] args) {

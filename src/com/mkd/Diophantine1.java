@@ -1,6 +1,4 @@
-package com.company;
-
-import static java.lang.Math.sqrt;
+package com.mkd;
 
 public class Diophantine1 {
     public static void main(String[] args) {

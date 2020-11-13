@@ -1,4 +1,4 @@
-package com.company;
+package com.mkd;
 
 import java.util.*;
 import java.util.stream.Collectors;

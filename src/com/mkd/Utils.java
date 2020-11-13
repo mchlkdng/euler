@@ -1,4 +1,4 @@
-package com.company;
+package com.mkd;
 
 import static java.lang.Math.sqrt;
 
