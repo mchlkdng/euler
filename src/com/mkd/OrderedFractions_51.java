@@ -1,9 +1,5 @@
 package com.mkd;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 /*
 Consider the fraction, n/d, where n and d are positive integers. If n<d and HCF(n,d)=1, it is called a reduced proper fraction.
 
@@ -26,14 +22,12 @@ public class OrderedFractions_51 {
         for (int d = 2; d <= 1000000; d++)
         {
             buildFractions(d);
-            if (d % 10000 == 0)
-                System.out.println(d);
         }
+        System.out.println(result);
         System.out.println((System.currentTimeMillis() - millis)/1000.0);
     }
 
-    private static List<Fraction> buildFractions(int d) {
-        List<Fraction> retVal = new ArrayList<>();
+    private static void buildFractions(int d) {
         int n = findN(d);
         for (; n < d; n++)
         {
@@ -42,7 +36,6 @@ public class OrderedFractions_51 {
                 if (fraction.getDouble() > result.getDouble())
                 {
                     result = fraction;
-                    System.out.println(fraction);
                 }
             }
             else
@@ -50,13 +43,6 @@ public class OrderedFractions_51 {
                 break;
             }
         }
-        retVal.sort(new Comparator<Fraction>() {
-            @Override
-            public int compare(Fraction f1, Fraction f2) {
-                return Double.compare(f1.getDouble(), f2.getDouble());
-            }
-        });
-        return retVal;
     }
 
     private static int findN(int d) {
@@ -77,14 +63,13 @@ public class OrderedFractions_51 {
 
     private static class Fraction
     {
-        int numerator = 1;
-        int divisor = 1;
+        final int numerator;
+        final int divisor;
 
         Fraction(int numerator, int divisor) {
             this.numerator = numerator;
             this.divisor = divisor;
         }
-
 
         public double getDouble() {
             return ((double)numerator)/divisor;
